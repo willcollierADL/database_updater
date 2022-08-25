@@ -1,6 +1,5 @@
-# adl_area_of_need_analysis
-area of need analysis
-
+# database updater
+Update the research database
 
 
 To make pyodbc pip install, you may need to run in terminal
