@@ -1,0 +1,10 @@
+pandas
+numpy
+configparser
+pyodbc
+openpyxl
+jinja2
+xlsxwriter
+openpyxl
+scipy
+git+https://github.com/willcollierADL/ADL_connections
