@@ -1,0 +1,1 @@
+select count(1) where exists (select * FROM [{database}].[dbo].[{table_name}])

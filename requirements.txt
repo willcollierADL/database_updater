@@ -8,3 +8,7 @@ xlsxwriter
 openpyxl
 scipy
 git+https://github.com/willcollierADL/ADL_connections
+google-api-python-client
+oauth2client
+google-auth
+google-auth-oauthlib
