@@ -1,4 +1,4 @@
-SELECT TOP(100) [UserID]
+SELECT [UserID]
       ,[SystemID]
       ,[LocalID]
       ,[Title]
@@ -31,4 +31,4 @@ SELECT TOP(100) [UserID]
       ,[AgreePrivacy]
       ,[AgreeResearch]
 FROM [{database}].[dbo].[{table_name}]
-where {date_col} between '{last_date}' and '{now_date}'
+where {date_col} > '{last_date}'
