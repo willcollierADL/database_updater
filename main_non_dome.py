@@ -1,6 +1,6 @@
 from database_connection import row_to_df, get_connection, run_sql, turn_large_data_into_insert, delete_records
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 from conversion_functions import change_postcode_to_first_elem
 from table_manipulation_functions import sql_string_fix, find_foreign_keys_in_table
 
@@ -34,7 +34,7 @@ def delete_added_records_for_repeat_entry(connex, cursr, entry_database, tablena
                        )
 
 
-date_now = datetime.strftime(datetime.now(), "%Y-%m-%d")
+date_now = datetime.strftime(datetime.now() + timedelta(days=1), "%Y-%m-%d")
 sql_var_master = {'entry_database': 'adl_research_pid',
                   'prod_database': 'adl'}
 

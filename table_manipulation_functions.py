@@ -6,7 +6,8 @@ import numpy as np
 def get_create_table_schema(table_name,
                             database_name,
                             crsr,
-                            archived=False):
+                            archived=False,
+                            version=''):
     primary_key_data = list(crsr.primaryKeys(table=table_name,
                                              catalog=database_name,
                                              schema='dbo'))
@@ -49,8 +50,9 @@ def get_create_table_schema(table_name,
         constraint_string = f"CONSTRAINT [{primary_key_data[0][5]}_archived] PRIMARY KEY CLUSTERED ([{primary_key_data[0][3]}] ASC)"
         out_table_name = f"{table_name}_archived"
     else:
-        constraint_string = f"CONSTRAINT [{primary_key_data[0][5]}] PRIMARY KEY CLUSTERED ([{primary_key_data[0][3]}] ASC)"
-        out_table_name = table_name
+        version_tag = f"_{version}" if version != '' else ""
+        constraint_string = f"CONSTRAINT [{primary_key_data[0][5]}{version_tag}] PRIMARY KEY CLUSTERED ([{primary_key_data[0][3]}] ASC)"
+        out_table_name = f"{table_name}_{version}" if version != '' else table_name
 
     sql_input = {'table_name': out_table_name,
                  'table_schema': 'dbo',

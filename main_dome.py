@@ -165,7 +165,6 @@ for j, (table, date_column) in enumerate(tables_with_createdate):
 """
 Run an insert!
 """
-
 cnxn, crsr = get_connection(config_path=database_creds)
 cnxn_dme, crsr_dme = get_connection(config_path=database_creds,
                                     config_section='DMEV1BETA',
